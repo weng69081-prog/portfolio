@@ -82,6 +82,15 @@
   }
   .bullets b{color:var(--ink);}
 
+  /* ---------- TRIO（三端结构） ---------- */
+  .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px;}
+  .trio .col{
+    background:var(--soft);border:1px solid #d8e5f3;border-radius:10px;padding:16px 16px 14px;
+  }
+  .trio h5{font-size:14px;color:var(--blue);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #cfdff0;}
+  .trio p{font-size:13px;color:#41505f;line-height:1.75;}
+  @media (max-width:820px){ .trio{grid-template-columns:1fr;} }
+
   /* ---------- SHOTS ---------- */
   .shots{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px;}
   .shot{
@@ -205,7 +214,24 @@
         <li>核心功能：AI 模拟面试（半双工语音对话，面试官说完自动开麦）、简历解析与 AI 优化、岗位匹配、学习路径与错题本、知识图谱、企业端岗位发布与面试邀约、投递跟踪。</li>
         <li>数据接入：接入大模型推理接口与 edge-tts 语音合成，TTS 失败自动降级到本地引擎；多轮对话上下文与用户记忆落库。</li>
         <li>部署运维：Docker 容器化，部署于阿里云轻量应用服务器（Ubuntu 24.04），完成安全组端口、反向代理与故障排查。</li>
+        <li><b>三端同源</b>：学生端 Web、企业招聘端 Web、微信小程序三套界面共用同一套后端接口。企业端覆盖
+            「岗位发布 → 候选人筛选 → 面试邀约 → 在线测评 → 人才库 / 人才画像」完整招聘流程。</li>
       </ul>
+
+      <div class="trio">
+        <div class="col">
+          <h5>学生端 · 32 页</h5>
+          <p>首页仪表盘 / 职业探索 / 岗位详情与匹配 / AI 模拟面试 / 笔试练习 / 错题本 / 学习路径 / 简历优化 / 投递跟踪 / 知识图谱 / 小橘 AI 助手</p>
+        </div>
+        <div class="col">
+          <h5>企业端 · 9 页</h5>
+          <p>企业看板 / 岗位发布与管理 / 候选人管理 / 面试管理 / 在线测评 / 人才库 / 人才画像 / 人才发展 / 企业设置</p>
+        </div>
+        <div class="col">
+          <h5>微信小程序 · 25 页</h5>
+          <p>学生端 13 页（面试、笔试、简历、投递）+ 企业端 8 页（岗位、人才、邀约）+ 公共 4 页（登录、角色选择、通知、聊天）</p>
+        </div>
+      </div>
 
       <div class="shots">
         <div class="shot wide"><img src="img/03-dashboard.jpg?v=2" alt="首页仪表盘"><div class="cap">首页仪表盘 · 活跃足迹 / 今日推荐 / 今日待办</div></div>
