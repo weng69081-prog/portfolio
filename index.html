@@ -156,6 +156,28 @@
     .sec-hd .sub{margin-left:0;width:100%;}
     .card{padding:24px 20px;}
   }
+
+  /* ---------- 打印 / PDF ---------- */
+  @media print{
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    @page{size:A4;margin:0;}
+    body{background:#fff;}
+    .hero{padding:52px 0 44px;}
+    .hero h1{font-size:40px;}
+    .hero h1 small{display:inline;margin-left:14px;}
+    section{padding:30px 0;}
+    .sec-hd .sub{margin-left:auto;width:auto;}
+    .stats .wrap{grid-template-columns:repeat(5,1fr);gap:8px;padding:20px 24px;}
+    .shots{grid-template-columns:repeat(2,1fr);}
+    .honors{grid-template-columns:1fr 1fr;}
+    .arch{grid-template-columns:repeat(5,1fr);}
+    .trio{grid-template-columns:repeat(3,1fr);}
+    .card{break-inside:auto;}
+    .honor,.shot,.trio .col,.arch{break-inside:avoid;page-break-inside:avoid;}
+    .sec-hd{break-after:avoid;page-break-after:avoid;}
+    .shot:hover{transform:none;box-shadow:none;}
+    #lb{display:none !important;}
+  }
 </style>
 </head>
 <body>
@@ -204,16 +226,16 @@
         <span class="period">2026 年 – 至今 · 独立开发</span>
       </div>
       <div class="stack">
-        <span class="tag">Vue 3</span><span class="tag">Vite</span><span class="tag">Pinia</span>
+        <span class="tag">Vue 3</span>
         <span class="tag">Element Plus</span><span class="tag">ECharts</span>
-        <span class="tag">FastAPI</span><span class="tag">SQLAlchemy</span><span class="tag">SQLite</span>
+        <span class="tag">FastAPI</span><span class="tag">SQLite</span>
         <span class="tag">uni-app</span><span class="tag">Docker</span><span class="tag">大模型 API</span><span class="tag">TTS</span>
       </div>
       <ul class="bullets">
         <li>一个人 + AI 编程工具从零交付的全栈平台，代码量约 <b>6.7 万行</b>：学生端 <b>32 页</b>、企业招聘端 <b>9 页</b>、微信小程序 <b>25 页</b>；后端 <b>20 个模块、224 个接口、35 张数据表</b>。</li>
         <li>核心功能：AI 模拟面试（半双工语音对话，面试官说完自动开麦）、简历解析与 AI 优化、岗位匹配、学习路径与错题本、知识图谱、企业端岗位发布与面试邀约、投递跟踪。</li>
         <li>数据接入：接入大模型推理接口与 edge-tts 语音合成，TTS 失败自动降级到本地引擎；多轮对话上下文与用户记忆落库。</li>
-        <li>部署运维：Docker 容器化，部署于阿里云轻量应用服务器（Ubuntu 24.04），完成安全组端口、反向代理与故障排查。</li>
+        <li>部署运维：Docker 容器化，部署于阿里云轻量应用服务器（Ubuntu 24.04），完成安全组端口配置与故障排查。</li>
         <li><b>三端同源</b>：学生端 Web、企业招聘端 Web、微信小程序三套界面共用同一套后端接口。企业端覆盖
             「岗位发布 → 候选人筛选 → 面试邀约 → 在线测评 → 人才库 / 人才画像」完整招聘流程。</li>
       </ul>
